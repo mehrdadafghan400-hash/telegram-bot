@@ -76,7 +76,7 @@ async def init_db():
             province TEXT DEFAULT 'نامشخص',
             city TEXT DEFAULT 'نامشخص',
             photo_id TEXT DEFAULT 'none',
-            bio TEXT DEFAULT '؟',
+           bio TEXT DEFAULT 'به ربات افغان گپ خوش آمدید',
             likes INTEGER DEFAULT 0,
             status TEXT DEFAULT 'registering',
             partner_id INTEGER DEFAULT 0,
