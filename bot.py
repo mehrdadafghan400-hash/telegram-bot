@@ -3647,6 +3647,11 @@ async def main():
         raise RuntimeError("TOKEN را در ابتدای فایل وارد کنید.")
 
     await init_db()
+    # کد اختصاصی برای پاک کردن لینک‌های غریبه از دیتابیس
+    async with aiosqlite.connect(DB_PATH) as db:
+        await db.execute("DELETE FROM chat_requests")
+        await db.execute("DELETE FROM random_queue")
+        await db.commit()
 
     try:
         me = await bot.get_me()
