@@ -1,3 +1,22 @@
+from fastapi import FastAPI
+import asyncio
+import uvicorn
+from threading import Thread
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"status": "ربات ۲۴ ساعته روشن است"}
+
+def run_web():
+    uvicorn.run(app, host="0.0.0.0", port=8080)
+
+# روشن کردن وب‌سایت در پس‌زمینه
+Thread(target=run_web).start()
+
+
+
 import asyncio
 import logging
 import aiosqlite
