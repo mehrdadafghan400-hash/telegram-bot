@@ -46,7 +46,7 @@ from aiogram.client.default import DefaultBotProperties
 
 logging.basicConfig(level=logging.INFO)
 
-TOKEN = "8514097794:AAHZ1aHV8Hwlasz6IeCT0ejgukgi3Nh_FCI"
+TOKEN = "8514097794:AAHkST4CykXv62a3buub0Ch--BcmAlkdxq8"
 OWNER_ID = 7545214150
 COIN_SELLER = "mehrdad1714"
 
