@@ -56,7 +56,8 @@ bot = Bot(
 )
 
 dp = Dispatcher()
-BOT_USERNAME = ""
+BOT_USERNAME = "@AfghanGapVIP_bot"
+
 DB_PATH = "afghangap_pure_organic.db"
 
 # ============================================================
