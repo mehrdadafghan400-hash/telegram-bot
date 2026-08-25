@@ -632,6 +632,27 @@ async def admin_users(call: CallbackQuery):
     await call.message.answer(text)
     await call.answer()
 
+@dp.callback_query(F.data == "admin_backup")
+async def admin_backup_database(call: CallbackQuery):
+    if not await is_admin(call.from_user.id):
+        return
+
+    import os
+    from aiogram.types import FSInputFile
+
+    if os.path.exists(DB_PATH):
+        await call.message.answer("⏳ در حال آماده‌سازی فایل پشتیبان دیتابیس...")
+        try:
+            db_file = FSInputFile(DB_PATH, filename="afghangap_backup.db")
+            await bot.send_document(chat_id=call.from_user.id, document=db_file, caption="💾 **فایل پشتیبان کامل دیتابیس ربات شما**\n\nحتماً این فایل را در جای امنی ذخیره کنید.")
+        except Exception as e:
+            await call.message.answer(f"❌ خطایی در ارسال فایل رخ داد: {e}")
+    else:
+        await call.message.answer("❌ فایل دیتابیس پیدا نشد!")
+        
+    await call.answer()
+
+
 
 @dp.callback_query(F.data == "admin_addcoins")
 async def admin_addcoins(call: CallbackQuery, state: FSMContext):
