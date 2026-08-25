@@ -506,75 +506,38 @@ def admin_panel_keyboard():
     return InlineKeyboardMarkup(
         inline_keyboard=[
             [
-                InlineKeyboardButton(
-                    text="📊 آمار",
-                    callback_data="admin_stats"
-                ),
-                InlineKeyboardButton(
-                    text="👥 کاربران",
-                    callback_data="admin_users"
-                )
+                InlineKeyboardButton(text="📊 آمار", callback_data="admin_stats"),
+                InlineKeyboardButton(text="👥 کاربران", callback_data="admin_users")
             ],
             [
-                InlineKeyboardButton(
-                    text="💰 افزودن سکه",
-                    callback_data="admin_addcoins"
-                ),
-                InlineKeyboardButton(
-                    text="💸 کم کردن سکه",
-                    callback_data="admin_removecoins"
-                )
+                InlineKeyboardButton(text="💰 افزودن سکه", callback_data="admin_addcoins"),
+                InlineKeyboardButton(text="💸 کم کردن سکه", callback_data="admin_removecoins")
             ],
             [
-                InlineKeyboardButton(
-                    text="⚠️ اخطار",
-                    callback_data="admin_warn"
-                ),
-                InlineKeyboardButton(
-                    text="🚫 محروم",
-                    callback_data="admin_ban"
-                )
+                InlineKeyboardButton(text="⚠️ اخطار", callback_data="admin_warn"),
+                InlineKeyboardButton(text="🚫 محروم", callback_data="admin_ban")
             ],
             [
-                InlineKeyboardButton(
-                    text="✅ رفع محرومیت",
-                    callback_data="admin_unban"
-                ),
-                InlineKeyboardButton(
-                    text="✏️ ویرایش پروفایل",
-                    callback_data="admin_edit"
-                )
+                InlineKeyboardButton(text="✅ رفع محرومیت", callback_data="admin_unban"),
+                InlineKeyboardButton(text="✏️ ویرایش پروفایل", callback_data="admin_edit")
             ],
             [
-                InlineKeyboardButton(
-                    text="🗑 حذف کاربر",
-                    callback_data="admin_delete"
-                )
+                InlineKeyboardButton(text="🗑 حذف کاربر", callback_data="admin_delete"),
+                InlineKeyboardButton(text="📥 پشتیبان‌گیری", callback_data="admin_backup")
             ],
             [
-                InlineKeyboardButton(
-                    text="👑 افزودن ادمین",
-                    callback_data="admin_add_admin"
-                ),
-                InlineKeyboardButton(
-                    text="❌ حذف ادمین",
-                    callback_data="admin_remove_admin"
-                )
+                InlineKeyboardButton(text="👑 افزودن ادمین", callback_data="admin_add_admin"),
+                InlineKeyboardButton(text="❌ حذف ادمین", callback_data="admin_remove_admin")
             ],
             [
-                InlineKeyboardButton(
-                    text="👑 لیست ادمین‌ها",
-                    callback_data="admin_list_admins"
-                )
+                InlineKeyboardButton(text="👑 لیست ادمین‌ها", callback_data="admin_list_admins")
             ],
             [
-                InlineKeyboardButton(
-                    text="📢 پیام همگانی",
-                    callback_data="admin_broadcast"
-                )
+                InlineKeyboardButton(text="📢 پیام همگانی", callback_data="admin_broadcast")
             ]
         ]
     )
+
 
 
 @dp.message(Command("admin"))
