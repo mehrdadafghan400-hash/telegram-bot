@@ -2178,16 +2178,20 @@ async def show_search_results(call: CallbackQuery):
         base += " AND city=?"
         params.append(my_city)
 
-    elif kind == "popular":
-        base += " ORDER BY likes DESC"
+        if kind == "popular":
+        base += " ORDER BY last_activity DESC, likes DESC"
 
     elif kind == "new":
-        base += " ORDER BY user_id DESC"
+        base += " ORDER BY last_activity DESC, user_id DESC"
 
     elif kind == "all":
-        base += " ORDER BY user_id DESC"
+        base += " ORDER BY last_activity DESC, user_id DESC"
+        
+    else:
+        base += " ORDER BY last_activity DESC"
 
     base += " LIMIT 10"
+
 
     async with aiosqlite.connect(DB_PATH) as db:
         async with db.execute(
